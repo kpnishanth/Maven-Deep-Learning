@@ -16,16 +16,29 @@
     <maven.compiler.source>19</maven.compiler.source>
     <maven.compiler.target>19</maven.compiler.target>
   </properties>
-  <distributionManagement>
-    <repository>
-      <id>packagecloud.Release</id>
-      <url>packagecloud+https://packagecloud.io/kpnishanth/Release</url>
-    </repository>
-    <snapshotRepository>
-      <id>packagecloud.Snapshot</id>
-      <url>packagecloud+https://packagecloud.io/kpnishanth/Snapshot</url>
-    </snapshotRepository>
-  </distributionManagement>
+  <profiles>
+    <profile>
+      <id>packageCloud</id>
+      <distributionManagement>
+        <repository>
+          <id>packagecloud.Release</id>
+          <url>packagecloud+https://packagecloud.io/kpnishanth/Release</url>
+        </repository>
+        <snapshotRepository>
+          <id>packagecloud.Snapshot</id>
+          <url>packagecloud+https://packagecloud.io/kpnishanth/Snapshot</url>
+        </snapshotRepository>
+      </distributionManagement>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>nexus</id>
+
+    </profile>
+  </profiles>
+
 
   <dependencies>
     <dependency>
