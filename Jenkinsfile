@@ -2,13 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage("Clean Up"){
-            steps{
-                deleteDir()
-            }
-        }
-
-        stage("Build"){
+           stage("Build"){
             steps{
                 dir("SpringMVCTest"){
                     sh "mvn clean install"
