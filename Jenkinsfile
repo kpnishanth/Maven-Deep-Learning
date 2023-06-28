@@ -5,7 +5,7 @@ pipeline {
            stage("Build"){
             steps{
                 dir("Nishanth"){
-                    sh "mvn -f Maven-Deep-Learning/pom.xml -U -DSkipTests clean package"
+                    sh "mvn -f pom.xml -U -DSkipTests clean package"
                 }
             }
         }
