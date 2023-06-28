@@ -4,14 +4,14 @@ pipeline {
     stages {
            stage("Build"){
             steps{
-                dir("SpringMVCTest"){
+                dir("Nishanth"){
                     sh "mvn clean install"
                 }
             }
         }
         stage("Test"){
             steps{
-                dir("SpringMVCTest"){
+                dir("NIshanth"){
                     sh "mvn test"
                 }
         }        
